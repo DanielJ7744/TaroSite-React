@@ -1,0 +1,129 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+
+    .btn-menu {
+        display: none;
+        color: #fff;
+        background-color: transparent;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        left: 0px;
+        transition: position 0.5s;
+
+        .item {
+            cursor: pointer;
+            color: #fff;
+            font-size: 16px;
+            line-height: 19px;
+            text-decoration: none;
+        }
+
+        .item + .item {
+            margin-left: 27px;
+        }
+    }
+
+    .left-nav {
+        position: relative;
+    }
+
+    .btn-close {
+        display: none;
+    }
+
+    .btn-dashboard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 138px;
+        height: 44px;
+        border-radius: 64px;
+        background-color: var(--main-color2);
+        color: #fff;
+        font-size: 16px;
+        line-height: 19px;
+        text-decoration: none;
+    }
+
+    .btn-torohub {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition-delay: 0.5s;
+        background-color: transparent;
+
+        img {
+            height: 35px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .header {
+        .btn-menu {
+            display: flex;
+        }
+
+        .header-content {
+            display: none;
+        }
+
+        .btn-close {
+            display: flex;
+            background-color: transparent;
+            margin-bottom: 30px;
+        }
+
+        .left-nav {
+            display: flex !important;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            left: 0px;
+            background-color: #fff;
+            z-index: 1000;
+            padding: 20px 30px;
+            width: 200px;
+            height: 100vh;
+
+            .item {
+                color: #000;
+                font-size: 26px;
+            }
+
+            .item + .item {
+                margin-left: 0px;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .header {
+        .btn-torohub {
+            img {
+                height: 30px;
+            }
+        }
+        
+        .btn-dashboard {
+            font-size: 14px;
+            width: 100px;
+            height: 40px;
+        }
+    }
+}
